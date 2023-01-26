@@ -1,8 +1,9 @@
 import ContactItem from 'components/ContactItem';
+import { ContList } from './ContactList.styled';
 
 const ContactList = ({ contacts, onDeleteContact }) => {
   return (
-    <ul>
+    <ContList>
       {contacts.map(({ id, name, number }) => {
         return (
           <ContactItem
@@ -14,7 +15,7 @@ const ContactList = ({ contacts, onDeleteContact }) => {
           />
         );
       })}
-    </ul>
+    </ContList>
   );
 };
 

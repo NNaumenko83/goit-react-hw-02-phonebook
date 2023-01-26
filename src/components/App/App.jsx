@@ -1,8 +1,9 @@
 import { nanoid } from 'nanoid';
 import { Component } from 'react';
-import ContactForm from './ContactForm';
-import ContactList from './ContactList';
-import Filter from './Filter';
+import ContactForm from '../ContactForm';
+import ContactList from '../ContactList';
+import Filter from '../Filter';
+import { ContactsTitle, Container } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -66,12 +67,12 @@ export class App extends Component {
     const visibleContats = this.getVisibleContacts(normalizedFilter);
 
     return (
-      <div>
+      <Container>
         <h1>Phonebook</h1>
 
         <ContactForm onSubmit={this.addContact} />
 
-        <h2>Contacts</h2>
+        <ContactsTitle>Contacts</ContactsTitle>
 
         <Filter value={this.state.filter} onInputChange={this.changeFilter} />
 
@@ -79,7 +80,7 @@ export class App extends Component {
           contacts={visibleContats}
           onDeleteContact={this.deleteContact}
         />
-      </div>
+      </Container>
     );
   }
 }
