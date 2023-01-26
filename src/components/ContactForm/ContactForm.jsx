@@ -4,6 +4,7 @@ import { Label, Button } from './ContactForm.styled';
 import styled from '@emotion/styled';
 import * as yup from 'yup';
 import 'yup-phone';
+import PropTypes from 'prop-types';
 
 const Input = styled(Field)`
   max-width: 100%;
@@ -46,8 +47,6 @@ let SignupSchema = yup.object().shape({
 
 class ContactForm extends Component {
   handleSubmit = (values, { resetForm }) => {
-    console.log(resetForm);
-
     this.props.onSubmit(values);
 
     resetForm();
@@ -79,5 +78,9 @@ class ContactForm extends Component {
     );
   }
 }
+
+ContactForm.propTypes = {
+  onSubmit: PropTypes.func,
+};
 
 export default ContactForm;

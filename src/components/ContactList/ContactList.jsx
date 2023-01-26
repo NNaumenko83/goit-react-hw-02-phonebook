@@ -1,5 +1,6 @@
 import ContactItem from 'components/ContactItem';
 import { ContList } from './ContactList.styled';
+import PropTypes from 'prop-types';
 
 const ContactList = ({ contacts, onDeleteContact }) => {
   return (
@@ -17,6 +18,11 @@ const ContactList = ({ contacts, onDeleteContact }) => {
       })}
     </ContList>
   );
+};
+
+ContactList.propTypes = {
+  visibleContats: PropTypes.array,
+  onDeleteContact: PropTypes.func,
 };
 
 export default ContactList;

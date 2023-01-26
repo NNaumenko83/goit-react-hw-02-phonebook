@@ -1,4 +1,5 @@
 import { ContItem, Button } from './ContactItem.styled';
+import PropTypes from 'prop-types';
 
 const ContactItem = ({ name, number, onDeleteContact, id }) => {
   return (
@@ -14,6 +15,13 @@ const ContactItem = ({ name, number, onDeleteContact, id }) => {
       </Button>
     </ContItem>
   );
+};
+
+ContactItem.propTypes = {
+  name: PropTypes.string,
+  number: PropTypes.string,
+  onDeleteContact: PropTypes.func,
+  id: PropTypes.string,
 };
 
 export default ContactItem;
